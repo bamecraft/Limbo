@@ -1,3 +1,3 @@
-# ServerTemplate
+# Limbo
 
-This repository is a template for create server specific repository
+Limbo server

@@ -1,0 +1,10 @@
+version: "3"
+services:
+  limbo:
+    container_name: limbo
+    image: "ghcr.io/bamecraft/limbo:latest"
+    volumes:
+      - ./server:/server
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    network_mode: host
