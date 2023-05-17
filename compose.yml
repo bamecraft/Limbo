@@ -10,7 +10,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     network_mode: bridge
     ports:
-      - target: 25565
+      - target: 29999
         published: 29999
         protocol: tcp
         mode: host
