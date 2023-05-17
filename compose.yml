@@ -1,10 +1,16 @@
 version: "3"
 services:
   limbo:
+    build:
+      context: .
     container_name: limbo
-    image: "ghcr.io/bamecraft/limbo:latest"
+    restart: unless-stopped
     volumes:
       - ./server:/server
       - /etc/localtime:/etc/localtime:ro
-    restart: unless-stopped
-    network_mode: host
+    network_mode: bridge
+    ports:
+      - target: 25565
+        published: 29999
+        protocol: tcp
+        mode: host
