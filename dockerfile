@@ -1,5 +1,8 @@
 FROM --platform=linux/amd64 ubuntu:latest
 
+# Use bash instead of sh
+SHELL ["/bin/bash", "-c"]
+
 # Change mirror server
 RUN sed -i.bak -r 's@http://(jp\.)?archive\.ubuntu\.com/ubuntu/?@http://linux.yz.yamagata-u.ac.jp/ubuntu/@g' /etc/apt/sources.list
 RUN apt-get update && apt-get upgrade -y --no-install-recommends
