@@ -7,7 +7,7 @@ artifactName=`curl -s -X 'GET' -H 'accept: application/json' 'https://ci.loohpja
 
 # Mandatory variables
 downloadUrl="https://ci.loohpjames.com/job/Limbo/lastSuccessfulBuild/artifact/target/${artifactName}"
-allocatedMemorySize="500M"
+allocatedMemorySize="256M"
 
 # Optional variables
 additionalJvmArguments=""
@@ -43,4 +43,4 @@ fi
 
 # Run server
 echo 'Booting server...'
-java -Xmx${allocatedMemorySize} -Xms${allocatedMemorySize} ${additionalJvmArguments} -jar server.jar nogui
+java -Xmx${allocatedMemorySize} ${additionalJvmArguments} -jar server.jar nogui
